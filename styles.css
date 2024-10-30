@@ -1,0 +1,1305 @@
+:root {
+    --primary-color: #2D6A4F;
+    --secondary-color: #40916C;
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header Styles */
+header {
+    background: transparent;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    transition: background 0.3s ease;
+}
+
+/* Add a new class for scroll state */
+header.scrolled {
+    background: white;
+    box-shadow: 0 2px 10px rgba(9, 158, 19, 0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+/* Add hover effect */
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Style for the active nav button */
+.nav-links .get-started-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links .get-started-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('./assets/alpisindia-BG.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin-left: 100px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    text-align: left;
+    color: #f0f0f0;
+    line-height: 1.4;
+}
+
+.hero .get-started-btn {
+    background: #2D6A4F;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.hero .get-started-btn:hover {
+    background: #40916C;
+    transform: translateY(-2px);
+}
+
+/* Text Section */
+.text-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 40px;
+}
+
+.text-content {
+    max-width: 900px;
+}
+
+.text-content h2 {
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.text-content p {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #666;
+    max-width: 700px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .text-section {
+        padding: 60px 20px;
+    }
+
+    .text-content h2 {
+        font-size: 36px;
+    }
+
+    .text-content p {
+        font-size: 18px;
+    }
+}
+
+/* Services Section */
+.services {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 40px;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    margin-bottom: 120px;
+}
+
+.service-text {
+    flex: 0 0 45%;
+    padding-top: 40px; /* Align text with image top */
+}
+
+.service-text h2 {
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.service-text p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #666;
+    max-width: 500px;
+}
+
+.service-image {
+    flex: 0 0 50%;
+}
+
+.service-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .services {
+        padding: 60px 20px;
+    }
+
+    .service-item {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .service-text, 
+    .service-image {
+        flex: 0 0 100%;
+    }
+
+    .service-text h2 {
+        font-size: 36px;
+    }
+
+    .service-image img {
+        height: 400px;
+    }
+}
+
+/* Contact Form */
+.contact {
+    padding: 5rem 2rem;
+    background: var(--light-bg);
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Services Section Styles */
+.service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-text h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.service-image {
+    flex: 0 0 400px; /* Increased from 300px */
+}
+
+.service-image img {
+    width: 100%;
+    max-width: 400px; /* Increased from 300px */
+    height: 300px;    /* Increased from 200px */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-image {
+        flex: 0 0 300px; /* Increased from 200px */
+    }
+
+    .service-image img {
+        max-width: 300px; /* Increased from 200px */
+        height: 200px;    /* Increased from 150px */
+    }
+
+    .hero-content {
+        margin-left: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Image Text Section */
+.image-text-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+.text-column {
+    flex: 0 0 45%;
+}
+
+.text-column h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.text-column p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #666;
+    max-width: 500px;
+}
+
+.image-column {
+    flex: 0 0 50%;
+}
+
+.image-column img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .image-text-section {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .text-column,
+    .image-column {
+        flex: 0 0 100%;
+    }
+
+    .text-column h2 {
+        font-size: 26px;
+    }
+
+    .image-column img {
+        height: 400px;
+    }
+}
+
+/* New container styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    gap: 80px;
+}
+
+.text {
+    flex: 1;
+}
+
+.text h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #666;
+    max-width: 450px;
+}
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* Reverse layout for the second section */
+.container.reverse {
+    flex-direction: row-reverse; /* This will swap the order */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .text h1 {
+        font-size: 32px;
+    }
+
+    .text p {
+        font-size: 16px;
+    }
+
+    .image img {
+        height: 400px;
+        max-width: 100%;
+    }
+}
+
+/* Guarantee Section Styles */
+.guarantee-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e0e0e0;
+    gap: 200px;
+}
+
+.guarantee-text {
+    flex: 0 0 45%;
+}
+
+.guarantee-text h3 {
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.guarantee-text h2 {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0;
+    color: #000;
+}
+
+.contact-details {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.contact-details p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.contact-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2D6A4F;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .guarantee-section {
+        gap: 60px;
+        padding: 60px 20px;
+    }
+
+    .guarantee-text h2 {
+        font-size: 32px;
+    }
+
+    .contact-details p {
+        font-size: 14px;
+    }
+
+    .contact-button {
+        font-size: 14px;
+    }
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-animation.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from left */
+.scroll-animation-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.6s ease-out;
+}
+
+/* Slide in from right */
+.scroll-animation-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.6s ease-out;
+}
+
+/* Common show class */
+.scroll-animation-left.show,
+.scroll-animation-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Optional: Add a custom scroll speed */
+    --scroll-behavior: smooth;
+    --scroll-duration: 1000ms; /* Adjust this value to control scroll speed */
+    /* Add padding for fixed headers */
+    scroll-padding-top: 100px; /* Adjust value to match your header height */
+}
+
+/* Optional: Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Reduce from 2rem */
+}
+
+.service-item {
+  margin-bottom: 1rem; /* Reduce from 2rem if that's what you're using */
+  /* If you're using padding, reduce it as well */
+  padding: 1rem; /* Reduce from 2rem if that's what you're using */
+}
+
+.rapid-candidate-matching,
+.data-driven-strategies {
+  margin-bottom: 1rem; /* Reduce this value to decrease spacing */
+}
+
+.data-driven-strategies {
+  margin-top: 1rem; /* Reduce this value to decrease spacing */
+}
+
+/* OR if using padding */
+.rapid-candidate-matching,
+.data-driven-strategies {
+  padding-bottom: 1rem; /* Assuming original was 2.5rem */
+}
+
+/* If these sections are inside a container with gap property */
+.services-container {
+  gap: 1rem; /* Assuming original was 2.5rem */
+}
+
+.image-section {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    height: 400px; /* Set a fixed height */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* For positioning child elements */
+}
+
+.image-section img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container */
+}
+
+.image-content {
+    position: absolute; /* Position content over the image */
+    color: white; /* Text color */
+    padding: 20px; /* Padding around text */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Target the container holding both image and text columns */
+.image-text-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0; /* Adjust as needed */
+}
+
+/* Adjust spacing between sections */
+.image-text-section + .image-text-section {
+    margin-top: 20px; /* Reduce this value to decrease spacing */
+}
+
+/* Image styling */
+.image-column img {
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+
+/* Additional margin adjustment if the columns themselves have spacing */
+.image-column, .text-column {
+    margin: 0 10px; /* Adjust this to control side spacing */
+}
+
+/* Add padding to the main container */
+.main-container {
+    padding: 0 20px; /* Adjust the padding as needed */
+}
+
+/* Or add padding directly to the image-text sections */
+.image-text-section {
+    padding: 20px 40px; /* Add spacing around each section */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Adjust spacing between sections */
+.image-text-section + .image-text-section {
+    margin-top: 10px; /* Reduce the vertical space between sections */
+}
+
+/* Image styling */
+.image-column img {
+    width: 60%; /* Adjust to desired size */
+    max-width: 100%; /* Prevents the image from stretching */
+    height: auto; /* Keeps the image aspect ratio */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+
+/* Additional margin adjustment if the columns themselves have spacing */
+.image-column, .text-column {
+    margin: 0 10px; /* Adjust this to control side spacing */
+}
+
+/* Main container padding for screen border spacing */
+.main-container {
+    padding: 0 20px;
+}
+
+/* Image-text section adjustments */
+.image-text-section {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px; /* Adjust vertical spacing between sections */
+}
+
+/* Increase image size and height */
+.image-column img {
+    width: 93%; /* Width remains the same */
+    height: 270px; /* Increase height by 15% */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+
+/* Additional margin adjustment if the columns themselves have spacing */
+.image-column, .text-column {
+    margin: 0 10px; /* Adjust this to control side spacing */
+}
+
+/* New section styling */
+.data-driven-section {
+    background-color: #1d6659; /* Keeping your existing background color */
+    color: white; /* Default text color */
+    padding: 80px; /* Reduced padding to keep it balanced */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between columns */
+    align-items: center; /* Center items vertically */
+    margin: 70px; /* Space from the screen edges */
+    border-radius: 2px; /* Optional: Add rounded corners */
+}
+
+.text-column {
+    flex: 1;
+}
+
+/* Description column styles */
+.description-column {
+    flex: 1;
+    text-align: right;
+}
+
+/* Heading styles */
+.data-driven-section h1 {
+    font-size: 2.5rem; /* Increased font size slightly */
+    font-weight: bold; /* Make the font bold */
+    margin: 0;
+    line-height: 1.3; /* Slightly adjusted line height */
+}
+
+.data-driven-section h2 {
+    font-size: 1rem; /* Reduced font size for subtitle */
+    margin: 0; 
+    color: white; 
+}
+
+/* Paragraph styling */
+.description-column p {
+    font-size: 1.3rem; /* Adjusted font size slightly */
+    margin-top: -80px; /* Moved text slightly up */
+}
+
+/* Precision section styling */
+.precision-section {
+    background-color: #ffffff; /* Background color */
+    color: #333; /* Text color */
+    padding: 80px 50px; /* Padding for the section */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between columns */
+    align-items: center; /* Center items vertically */
+    border-top: 1px solid #ddd; /* Top border for separation */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
+    margin: 0 50px; /* Margin from both sides of the screen */
+}
+
+/* Text column styles */
+.precision-section .text-column {
+    flex: 1; /* Allow this column to take available space */
+    margin-right: 25px; /* Add margin to separate from the right column */
+}
+
+/* Description column styles */
+.precision-section .description-column {
+    flex: 1; /* Allow this column to take available space */
+    text-align: right; /* Align text to the right */
+    margin-left: 20px; /* Add margin to separate from the left column */
+}
+
+/* Heading styles */
+.precision-section h1 {
+    font-size: 3rem; /* Font size for the main heading */
+    font-weight: bold; /* Make the font bold */
+    margin: 0;
+    line-height: 1.2; /* Line height for spacing */
+}
+
+.precision-section h2 {
+    font-size: 1rem; /* Font size for the subheading */
+    margin: 0; /* Remove default margin */
+    color: #666; /* Subheading text color */
+    font-weight: normal; /* Normal font weight */
+}
+
+/* Paragraph styling */
+.precision-section p {
+    font-size: 1rem; /* Font size for the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Button styling */
+.contact-button {
+    background-color: #1d6659; /* Button background color */
+    color: white; /* Button text color */
+    padding: 15px 30px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1rem; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    line-height: 1.5; /* Line height for spacing */
+    display: inline-block; /* Align with text */
+}
+
+/* Combined section styling */
+.combined-section {
+    background-color: #1d6659; /* Background color */
+    color: white; /* Default text color */
+    padding: 80px 50px; /* Padding for the section */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of columns */
+    justify-content: space-between; /* Space between columns */
+    align-items: flex-start; /* Align items at the top */
+    margin: 0 50px; /* Margin from both sides of the screen */
+    border-radius: 2px; /* Optional: Add rounded corners */
+}
+
+/* Text column styles */
+.combined-section .text-column {
+    flex: 1 1 45%; /* Allow this column to take available space */
+    margin: 20px; /* Add margin for spacing */
+}
+
+/* Description column styles */
+.combined-section .description-column {
+    flex: 1 1 45%; /* Allow this column to take available space */
+    text-align: right; /* Align text to the right */
+    margin: 20px; /* Add margin for spacing */
+}
+
+/* Heading styles */
+.combined-section h1 {
+    font-size: 3rem; /* Font size for the main heading */
+    font-weight: bold; /* Make the font bold */
+    margin: 0;
+    line-height: 1.2; /* Line height for spacing */
+}
+
+.combined-section h2 {
+    font-size: 1rem; /* Font size for the subheading */
+    margin: 0; /* Remove default margin */
+    color: #ccc; /* Subheading text color */
+    font-weight: normal; /* Normal font weight */
+}
+
+/* Paragraph styling */
+.combined-section p {
+    font-size: 1rem; /* Font size for the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Button styling */
+.contact-button {
+    background-color: #1d6659; /* Button background color */
+    color: white; /* Button text color */
+    padding: 15px 30px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1rem; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    line-height: 1.5; /* Line height for spacing */
+    display: inline-block; /* Align with text */
+}
+
+/* Main section styling */
+.main-section {
+    margin: 0 50px; /* Margin from both sides of the screen */
+}
+
+/* Data-driven section styling */
+.data-driven-section {
+    background-color: #1d6659; /* Background color */
+    color: white; /* Default text color */
+    padding: 80px 50px; /* Padding for the section */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between columns */
+    align-items: center; /* Center items vertically */
+    border-radius: 2px; /* Optional: Add rounded corners */
+    margin-bottom: 50px; /* Space between sections */
+}
+
+/* Precision section styling */
+.precision-section {
+    background-color: #ffffff; /* Background color */
+    color: #333; /* Text color */
+    padding: 80px 50px; /* Padding for the section */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between columns */
+    align-items: center; /* Center items vertically */
+    border-top: 1px solid #ddd; /* Top border for separation */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
+}
+
+/* Text column styles */
+.text-column {
+    flex: 1; /* Allow this column to take available space */
+    margin-right: 20px; /* Add margin to separate from the right column */
+}
+
+/* Description column styles */
+.description-column {
+    flex: 1; /* Allow this column to take available space */
+    text-align: right; /* Align text to the right */
+    margin-left: 20px; /* Add margin to separate from the left column */
+}
+
+/* Heading styles */
+h1 {
+    font-size: 3rem; /* Font size for the main heading */
+    font-weight: bold; /* Make the font bold */
+    margin: 0;
+    line-height: 1.2; /* Line height for spacing */
+}
+
+h2 {
+    font-size: 1rem; /* Font size for the subheading */
+    margin: 0; /* Remove default margin */
+    color: #ccc; /* Subheading text color */
+    font-weight: normal; /* Normal font weight */
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1rem; /* Font size for the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Button styling */
+.contact-button {
+    background-color: #1d6659; /* Button background color */
+    color: white; /* Button text color */
+    padding: 15px 30px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1rem; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    line-height: 1.5; /* Line height for spacing */
+    display: inline-block; /* Align with text */
+}
+
+/* Tailored section styling */
+.tailored-section {
+    background-color: #d3c6a1; /* Background color */
+    color: #333; /* Text color */
+    padding: 80px 50px; /* Padding for the section */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: left; /* Align text to the left */
+}
+
+/* Text column styles */
+.tailored-section .text-column {
+    width: 100%; /* Full width */
+    margin-bottom: 40px; /* Space below the text */
+}
+
+/* Description column styles */
+.tailored-section .description-column {
+    width: 100%; /* Full width */
+    margin-bottom: 40px; /* Space below the description */
+}
+
+/* Heading styles */
+.tailored-section h1 {
+    font-size: 3rem; /* Font size for the main heading */
+    font-weight: bold; /* Make the font bold */
+    margin: 0;
+    line-height: 1.2; /* Line height for spacing */
+}
+
+.tailored-section h2 {
+    font-size: 1rem; /* Font size for the subheading */
+    margin: 0; /* Remove default margin */
+    color: #666; /* Subheading text color */
+    font-weight: normal; /* Normal font weight */
+}
+
+/* Paragraph styling */
+.tailored-section p {
+    font-size: 1rem; /* Font size for the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Image row styling */
+.image-row {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between images */
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space below each row */
+}
+
+.image-row img {
+    width: 32%; /* Width for each image in the first row */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.image-row:nth-child(4) img {
+    width: 48%; /* Width for each image in the second row */
+}
+
+/* Client feedback section styling */
+.client-feedback-section {
+    background-color: #d3c6a1; /* Background color */
+    color: #333; /* Text color */
+    padding: 80px 50px; /* Padding for the section */
+    text-align: center; /* Center text */
+}
+
+/* Heading styles */
+.client-feedback-section h2 {
+    font-size: 2.5rem; /* Font size for the main heading */
+    font-weight: bold; /* Make the font bold */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.client-feedback-section p {
+    font-size: 1rem; /* Font size for the paragraph */
+    margin-bottom: 40px; /* Space below the paragraph */
+}
+
+/* Feedback cards styling */
+.feedback-cards {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Individual feedback card styling */
+.feedback-card {
+    background-color: #f0f0f0; /* Card background color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    margin: 10px; /* Margin around the card */
+    flex: 1 1 30%; /* Allow cards to grow and shrink */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Quote icon styling */
+.quote-icon {
+    font-size: 2rem; /* Size of the quote icon */
+    color: #1d6659; /* Color for the quote icon */
+}
+
+/* Client name styling */
+.client-name {
+    margin-top: 15px; /* Space above the client name */
+    font-weight: bold; /* Make the client name bold */
+}
+
+/* Image styling */
+.feedback-card img {
+    width: 100%; /* Set width to 100% of the card */
+    height: 200px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 8px; /* Match the card's rounded corners */
+}
+
+/* Talent section styling */
+.talent-section {
+    background-color: #1d6659; /* Background color */
+    color: white; /* Text color */
+    padding: 80px 50px; /* Padding for the section */
+    text-align: center; /* Center text */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Heading styles */
+.talent-section h1 {
+    font-size: 2.5rem; /* Font size for the main heading */
+    font-weight: bold; /* Make the font bold */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Paragraph styling */
+.talent-section p {
+    font-size: 1rem; /* Font size for the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Button container styling */
+.button-container {
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Button styling */
+.get-started-button {
+    background-color: white; /* Button background color */
+    color: #1d6659; /* Button text color */
+    padding: 15px 30px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1rem; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    line-height: 1.5; /* Line height for spacing */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.get-started-button:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* Header styling */
+.header {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between logo and title */
+    padding: 20px 50px; /* Padding for the header */
+    background-color: #1d6659; /* Background color for the header */
+    color: white; /* Text color */
+}
+
+/* Logo container styling */
+.logo-container {
+    margin-right: 20px; /* Space between logo and title */
+}
+
+.logo {
+    width: 50px; /* Set logo width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Site title styling */
+.site-title {
+    font-size: 1.5rem; /* Font size for the site title */
+    font-weight: bold; /* Make the font bold */
+}
+
+/* Footer styling */
+.footer {
+    background-color: #ffffff; /* Background color */
+    color: #333; /* Text color */
+    padding: 40px 50px; /* Padding for the footer */
+    text-align: left; /* Align text to the left */
+}
+
+/* Footer content styling */
+.footer-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between sections */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Footer logo styling */
+.footer-logo {
+    flex: 1; /* Allow this section to take available space */
+    margin-right: 20px; /* Space to the right */
+}
+
+.footer-logo h1 {
+    font-size: 2rem; /* Font size for the logo */
+    font-weight: bold; /* Make the font bold */
+}
+
+.footer-logo p {
+    font-size: 1rem; /* Font size for the description */
+    margin: 10px 0; /* Space above and below */
+}
+
+/* Button styling */
+.get-started-button {
+    background-color: #1d6659; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1rem; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.get-started-button:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* Footer links styling */
+.footer-links {
+    flex: 1; /* Allow this section to take available space */
+    margin: 0 20px; /* Space on the sides */
+}
+
+.footer-links h3 {
+    font-weight: bold; /* Make the heading bold */
+}
+
+.footer-links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-links li {
+    margin: 5px 0; /* Space between list items */
+}
+
+/* Footer contact styling */
+.footer-contact {
+    flex: 1; /* Allow this section to take available space */
+    margin-left: 20px; /* Space to the left */
+}
+
+.footer-contact h3 {
+    font-weight: bold; /* Make the heading bold */
+}
+
+/* Social icons styling */
+.social-icons {
+    margin-top: 10px; /* Space above the icons */
+}
+
+.social-icons a {
+    margin-right: 10px; /* Space between icons */
+    color: #333; /* Icon color */
+}
+
+/* Footer bottom styling */
+.footer-bottom {
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Space above */
+}
