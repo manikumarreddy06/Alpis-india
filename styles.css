@@ -1303,3 +1303,30 @@ p {
     text-align: center; /* Center text */
     margin-top: 20px; /* Space above */
 }
+
+/* Add this to your styles.css */
+.data-driven-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: center; /* Center items */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add some padding */
+}
+
+.data-driven-section .text-column,
+.data-driven-section .description-column {
+    width: 100%; /* Make columns full width */
+    margin: 10px 0; /* Add margin for spacing */
+}
+
+/* Media query for smaller devices */
+@media (min-width: 768px) {
+    .data-driven-section {
+        flex-direction: row; /* Change to row layout on larger screens */
+    }
+
+    .data-driven-section .text-column,
+    .data-driven-section .description-column {
+        width: 50%; /* Set width to 50% for larger screens */
+    }
+}
